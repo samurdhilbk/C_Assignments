@@ -1,0 +1,35 @@
+1. The linked list is at this point is basically the 5 variables of type "student" and the pointer "numbers", which gives us the
+   point to start referring to the llinked list elements.
+    
+   So the memory allocated for the linked list at this moment can be obtained by 
+   printf("%d\n",sizeof(students)+size*sizeof(student)); 
+
+   This gave the result of 328 bytes.
+
+2. This memory is allocated dynamically at each moment when a new student is added to the list. So it takes place at the point where the malloc() function is used.
+    
+   It is freed when a particular student is removed from the list or when the program terminates after the command 0 is entered.
+   This happens at the point where the free() function is used.
+
+   The freeing up of memory also happens dynamically.
+
+3. Each element of the linked list is iterated by using a for loop using a pointer of type student as the counter. When the elemnent pointed to by the current pointer 
+   matches the student to be removed, the current pointer is set to point to the element pointed to by the element to be deleted. This effectively sets the element 
+   before the element to be deleted to point to the element in the linked list immediately after the element to be deleted.
+
+   Then the memory occupied by the element to be deleted is freed by using the free() function.
+
+   So the deletion effectively takes place by reassigning a pointer and freeing up a memory location.
+
+4. 					Pros										Cons
+
+	*Deletion of a particular element can be done much faster.					*Compared with an array holding(only) the same number of elements,
+	*It is not necessary to know the size of the list beforehand.					 takes up more space(due to the pointers).
+         So elements can be added to the list when needed without any trouble.
+         So memory is not used by the linked list unnecessarily.					*Have to iterate through the entire list to find,access or update a particular
+ 													 element.This can be done in a single operation when an array is used.
+
+5. An array is better.
+   Since the number of students is known at the beginning, an array can be used without any wastage of memory. A linked list of the same size would take up much more memory.
+   Giving a unique numerial ID(the array index) is only possible if an array is used. This can be used to view or modify a given element in a single operation. If a linked
+   list was used, viewing or modifying an element would require to iterate thorugh the linked list. Also indexing cannot be done.

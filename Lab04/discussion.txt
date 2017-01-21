@@ -1,0 +1,24 @@
+1. 52000 bytes.
+   printf("%d\n",sizeof(students));
+
+2. Since the array is declared as a global variable, memory allocation happens at the comipilation of the program. The memory is freed
+   when the program terminates after it has been run.
+
+3. Deleting values has been implemented by moving each value in the array, after the value which needs to be deleted, to the previous 
+   location in the array.
+   No, in this method, there is no need for that. Since the size variable specifies the end point, the required memory has already
+   been allocated and there are no gaps in the data structure, there is no use of doing any additional processing.
+
+4. No.
+   When declaring the students array, we have to specify a size for it. So the numeber of students that can be added is limited by this
+   number. However, we cannot make this number infinitely large either. Since the memory for the array is allocated in the data segment,
+   the size of the array can only be increased upto the maximum memory which is allowed for the program in the data segment.
+
+5. If we allocate the memory for the array dynamically, this method can be used.
+   
+   Assume this is the initial declaration.		student* students = (student*)malloc(sizeof(student) * size);
+   (size is the intitial size of the array)
+
+   Then we can reallocate the memory using		students = (student*)realloc(sizeof(student) * (size-2) );
+   realloc() to change the size of the array.
+   
